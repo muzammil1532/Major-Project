@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Home page</title>
+    <style media="screen">
+      body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background: #304352;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #d7d2cc, #304352);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #d7d2cc, #304352); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+.box {
+    width: 500px;
+    padding: 40px;
+    position: absolute;
+    top: 20%;
+    left: 30%;
+    background: #212529;
+    border-radius: 15px;
+    text-align: center;
+    transition: 0.25s;
+    margin-top: 100px
+}
+
+.box input[type="number"] {
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid #838383;
+    padding: 10px 10px;
+    width: 250px;
+    outline: none;
+    color: white;
+    border-radius: 0px;
+    transition: 0.25s
+}
+
+ h1 {
+    color: lightgreen;
+    text-align: center;
+    text-shadow: #4caf50;
+    font-weight: 650;
+    font-size: 50px;
+}
+.box p {
+    color: lightsalmon;
+    font-weight : 350;
+}
+
+.box input[type="number"]:focus {
+    width: 300px;
+    border-color:#4caf50;
+}
+
+.box input[type="submit"] {
+    border: 0;
+    background: #4caf50;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    padding: 14px 40px;
+    outline: none;
+    color: white;
+    border-radius: 0px;
+    transition: 0.25s;
+    cursor: pointer
+}
+
+.box input[type="submit"]:hover {
+    background: #347736;
+}
+
+
+    </style>
+  </head>
+  <body>
+    <h1>Intrusion Detection in Network</h1>
+    <form  class="box" action="{% url 'result' %}">
+      {% csrf_token %}
+      
+      <p>Total Duration : </p>
+      <input type="number" name="dur" step="any">
+      <br>
+
+      <p>Source Bytes : </p>
+      <input type="number" name="sbytes" step="any">
+      <br>
+
+      <p>Destination Bytes : </p>
+      <input type="number" name="dbytes" step="any">
+      <br>
+
+      <p>Rate : </p>
+      <input type="number" name="rate" step="any">
+      <br>
+
+      <p>sttl : </p>
+      <input type="number" name="sttl" step="any">
+      <br>
+
+      <p>Source load : </p>
+      <input type="number" name="sload" step="any">
+      <br>
+
+      <p>Destination load : </p>
+      <input type="number" name="dload" step="any">
+      <br>
+
+      <p>Source mean : </p>
+      <input type="number" name="smean" step="any">
+      <br>
+
+      <p>Destination mean : </p>
+      <input type="number" name="dmean" step="any">
+      <br>
+
+      <p>ct_srv_src : </p>
+      <input type="number" name="ct_srv_src" step="any">
+      <br>
+
+      <p>ct_dst_sport_ltm : </p>
+      <input type="number" name="ct_dst_sport_ltm" step="any">
+      <br>
+
+      <p>ct_dst_src_ltm : </p>
+      <input type="number" name="ct_dst_src_ltm" step="any">
+      <br>
+
+      <p>ct_srv_dst : </p>
+      <input type="number" name="ct_srv_dst" step="any">
+      <br>
+
+      <p>label : </p>
+      <input type="number" name="label" step="any">
+      <br>
+
+      <p>service : </p>
+      <input type="number" name="service" step="any">
+      <br>
+      <br/>
+      <br/>
+      <input type="submit" value='Get Prediction'>
+    </form>
+  </body>
+</html>
+
+<!--['dur',
+ 'sbytes',
+ 'dbytes',
+ 'rate',
+ 'sttl',
+ 'sload',
+ 'dload',
+ 'smean',
+ 'dmean',
+ 'ct_srv_src',
+ 'ct_dst_sport_ltm',
+ 'ct_dst_src_ltm',
+ 'ct_srv_dst',
+ 'label',
+ 'service']-->
